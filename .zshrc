@@ -1,4 +1,3 @@
-# Random Comment cahnge
 # Lines configured by zsh-newuser-install
 #HISTFILE=~/.histfile
 #HISTSIZE=10000
