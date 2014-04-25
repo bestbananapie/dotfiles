@@ -116,9 +116,9 @@
   "! VIM User Interface
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "Auto fold code
-  set foldenable
-  set foldmethod=indent
-  set foldclose=all
+  "set foldenable
+  "set foldmethod=indent
+  "set foldclose=all
 
   "Show matching brackets when text indicator is over them
   set showmatch 
