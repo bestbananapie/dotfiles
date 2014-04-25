@@ -36,7 +36,8 @@
   " let Vundle manage Vundle, required
   Plugin 'gmarik/Vundle.vim'
   Bundle 'scrooloose/nerdtree'
-
+  Bundle 'Valloric/YouCompleteMe'
+  Bundle 'scrooloose/syntastic'
   call vundle#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,7 +109,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "! Formatting
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set pastetoggle=<F2>   
+  set pastetoggle=<F3>   
   set nowrap                      " Do not wrap long lines
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -129,7 +130,7 @@
   "Enable auto complete menu
   set wildmenu 
 
-  set spell
+  "set spell
 
   "Ignore compiled files
   set wildignore=*.o,*~,*.pyc 
