@@ -3,6 +3,9 @@ echo "$1"
 if [ "$#" -eq 0 ] ;  then
 	echo "Help"
 elif [ "$1" = "install" ] || ["$1" = "-i"] ; then
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  
 	ln -s -v ~/dotfiles/tmux.conf ~/.tmux.conf
 	ln -s -v ~/dotfiles/vimrc  ~/.vimrc
 
