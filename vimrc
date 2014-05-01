@@ -35,8 +35,8 @@
 
   " let Vundle manage Vundle, required
   Plugin 'gmarik/Vundle.vim'
+  Bundle 'itchyny/lightline.vim'
   Bundle 'scrooloose/nerdtree'
-  Bundle 'Valloric/YouCompleteMe'
   Bundle 'scrooloose/syntastic'
   call vundle#end()
 
@@ -116,9 +116,11 @@
   "! VIM User Interface
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "Auto fold code
-  "set foldenable
-  "set foldmethod=indent
-  "set foldclose=all
+  set nofoldenable 
+  set foldmethod=indent
+
+  "Show status bar
+  set laststatus=2
 
   "Show matching brackets when text indicator is over them
   set showmatch 
