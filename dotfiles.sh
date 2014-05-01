@@ -3,13 +3,26 @@ echo "$1"
 if [ "$#" -eq 0 ] ;  then
 	echo "Help"
 elif [ "$1" = "install" ] || ["$1" = "-i"] ; then
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  if [ -d ~/.vim/bundle/Vundle.vim ] ; then
+    echo "Running Updater on Vundle"
+    cd ~/.vim/bundle/Vundle.vim    
+    git pull  
+  else
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  fi
+
+  if [ -d ~/.zprezto ] ; then
+    echo "Running Updater on zPrezto"
+    cd ~/.zprezto    
+    git pull  
+  else
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  fi
   
 	ln -s -v ~/dotfiles/tmux.conf ~/.tmux.conf
 	ln -s -v ~/dotfiles/vimrc  ~/.vimrc
 
-  cp -v ~/dotfiles/zprezto/prompt_adam3_setup ~/.zprezto/modules/prompt/functions/
+  ln -s -v ~/dotfiles/zprezto/prompt_adam3_setup ~/.zprezto/modules/prompt/functions/
 	ln -s -v ~/dotfiles/zprezto/zshenv ~/.zshenv
 	ln -s -v ~/dotfiles/zprezto/zshrc ~/.zshrc
 	ln -s -v ~/dotfiles/zprezto/zprofile ~/.zprofile
