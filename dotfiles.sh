@@ -30,6 +30,7 @@ elif [ "$1" = "install" ] || ["$1" = "-i"] ; then
 	ln -s -v ~/dotfiles/zprezto/zlogin ~/.zlogin
 	ln -s -v ~/dotfiles/zprezto/zlogout ~/.zlogout 
 elif [ "$1" = "remove" ] || [ "$1" = "-r"] ; then
+  rm -i ~/.zprezto/modules/prompt/functions/prompt_adam3_setup 
 	rm -i ~/.tmux.conf
 	rm -i ~/.vimrc
 	rm -i ~/.zshenv
