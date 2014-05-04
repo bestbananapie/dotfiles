@@ -68,6 +68,11 @@
   "Synatx Highlighting
   syntax on
 
+  "Highlight columns past 80
+  let &colorcolumn=join(range(81,999),",")
+  hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+
+
   "Set syntax highlighting
   syntax on 
 
@@ -75,7 +80,7 @@
   set number 
   
   "Default Colorscheme
-  colorscheme elflord 
+  colorscheme molokai 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "! Key Bindings
@@ -102,6 +107,10 @@
   "Use mouse if avaliable
   if has('mouse') 
     set mouse=a
+    if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
   endif
 
   "Backspace over everything

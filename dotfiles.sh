@@ -21,6 +21,7 @@ elif [ "$1" = "install" ] || ["$1" = "-i"] ; then
   
 	ln -s -v ~/dotfiles/tmux.conf ~/.tmux.conf
 	ln -s -v ~/dotfiles/vimrc  ~/.vimrc
+	ln -s -v ~/dotfiles/molokai.vim  ~/.vim/colors/molokai.vim
 
   ln -s -v ~/dotfiles/zprezto/prompt_adam3_setup ~/.zprezto/modules/prompt/functions/
 	ln -s -v ~/dotfiles/zprezto/zshenv ~/.zshenv
@@ -33,6 +34,7 @@ elif [ "$1" = "remove" ] || [ "$1" = "-r"] ; then
   rm -i ~/.zprezto/modules/prompt/functions/prompt_adam3_setup 
 	rm -i ~/.tmux.conf
 	rm -i ~/.vimrc
+  rm -i ~/.vim/colors/molokai.vim
 	rm -i ~/.zshenv
 	rm -i ~/.zshrc
 	rm -i ~/.zprofile
