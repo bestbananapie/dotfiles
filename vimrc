@@ -10,14 +10,22 @@
   "! General
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   set nocompatible              " Be iMproved
+  
   " Automatic reloading of .vimrc
   autocmd! bufwritepost .vimrc source %
+
+  "Split window right by default
+  set splitbelow
+  "set splitright
 
   "Load file when changed externally
   set autoread
 
   "Language-Dependent Indenting
   filetype plugin indent on
+
+  " Open tag definition in a new vsplit 
+  map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
   
   "Turn off backup
   set nobackup
@@ -35,11 +43,25 @@
 
   " let Vundle manage Vundle, required
   Plugin 'gmarik/Vundle.vim'
+  
+  "Status Line for vim
   Bundle 'itchyny/lightline.vim'
-  Bundle 'scrooloose/nerdtree'
+  "Bundle 'scrooloose/nerdtree'
+
+  "Snippets 
+  Bundle 'MarcWeber/vim-addon-mw-utils'
+  Bundle 'tomtom/tlib_vim'
+  Bundle 'garbas/vim-snipmate'
+  Bundle 'honza/vim-snippets'
+  
+  Bundle 'kien/ctrlp.vim'
+  Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/syntastic'
   call vundle#end()
-
+  
+  let g:ctrlp_map = '<c-p>'
+  let g:ctrlp_cmd = 'CtrlP'
+  "let g:NERDTreeDirArrows=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "! Visual
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -59,14 +81,14 @@
   "! Key Bindings
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "Disable Arrow Keys
-  inoremap  <Up>     <NOP>
-  inoremap  <Down>   <NOP>
-  inoremap  <Left>   <NOP>
-  inoremap  <Right>  <NOP>
-  noremap   <Up>     <NOP>
-  noremap   <Down>   <NOP>
-  noremap   <Left>   <NOP>
-  noremap   <Right>  <NOP>
+  map <Left> <Nop>
+  map <Right> <Nop>
+  map <Up> <Nop>
+  map <Down> <Nop>
+  imap <up> <nop>
+  imap <down> <nop>
+  imap <left> <nop>
+  imap <right> <nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "! Navigation
@@ -109,7 +131,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "! Formatting
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set pastetoggle=<F3>   
+  set pastetoggle=<F2>   
   set nowrap                      " Do not wrap long lines
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
