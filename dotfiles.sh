@@ -19,27 +19,27 @@ elif [ "$1" = "install" ] || ["$1" = "-i"] ; then
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
   fi
 
-	ln -s -v ./tmux.conf ~/.tmux.conf
-	ln -s -v ./vimrc  ~/.vimrc
-	ln -s -v ./gitconfig  ~/.gitconfig
+	ln -s -v ~/dotfiles/tmux.conf ~/.tmux.conf
+	ln -s -v ~/dotfiles/vimrc  ~/.vimrc
+	ln -s -v ~/dotfiles/gitconfig  ~/.gitconfig
 
-  mkdir ~/.vim/colors
-	ln -s -v ./molokai.vim  ~/.vim/colors/molokai.vim
+  	mkdir ~/.vim/colors
+	ln -s -v ~/dotfiles/molokai.vim  ~/.vim/colors/molokai.vim
 
-  ln -s -v ./zprezto/prompt_adam3_setup ~/.zprezto/modules/prompt/functions/
-	ln -s -v ./zprezto/zshenv ~/.zshenv
-	ln -s -v ./zprezto/zshrc ~/.zshrc
-	ln -s -v ./zprezto/zprofile ~/.zprofile
-	ln -s -v ./zprezto/zpreztorc ~/.zpreztorc
-	ln -s -v ./zprezto/zlogin ~/.zlogin
-	ln -s -v ./zprezto/zlogout ~/.zlogout
+  	ln -s -v ~/dotfiles/zprezto/prompt_adam3_setup ~/.zprezto/modules/prompt/functions/
+	ln -s -v ~/dotfiles/zprezto/zshenv ~/.zshenv
+	ln -s -v ~/dotfiles/zprezto/zshrc ~/.zshrc
+	ln -s -v ~/dotfiles/zprezto/zprofile ~/.zprofile
+	ln -s -v ~/dotfiles/zprezto/zpreztorc ~/.zpreztorc
+	ln -s -v ~/dotfiles/zprezto/zlogin ~/.zlogin
+	ln -s -v ~/dotfiles/zprezto/zlogout ~/.zlogout
 
 elif [ "$1" = "remove" ] || [ "$1" = "-r"] ; then
-  rm -i ~/.zprezto/modules/prompt/functions/prompt_adam3_setup
+  	rm -i ~/.zprezto/modules/prompt/functions/prompt_adam3_setup
 	rm -i ~/.tmux.conf
 	rm -i ~/.vimrc
 	rm -i ~/.gitconfig
-  rm -i ~/.vim/colors/molokai.vim
+  	rm -i ~/.vim/colors/molokai.vim
 	rm -i ~/.zshenv
 	rm -i ~/.zshrc
 	rm -i ~/.zprofile
