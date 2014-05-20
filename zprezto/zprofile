@@ -43,6 +43,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  ~/bin
   $path
 )
 
@@ -74,4 +75,4 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
-PS1="$PS1\n"
+export TERM=xterm-256color
