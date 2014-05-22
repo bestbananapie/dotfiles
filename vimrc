@@ -20,6 +20,8 @@
   set splitbelow
   "set splitright
 
+  set t_Co=256
+
   "Load file when changed externally
   set autoread
 
