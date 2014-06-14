@@ -36,6 +36,9 @@
   set nobackup
   set nowb
   set noswapfile
+
+  "Toggle line wrap for tex files
+  autocmd BufRead,BufNewFile   *.tex setlocal wrap linebreak colorcolumn=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   "! Vundle
   """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,6 +64,7 @@
   Bundle 'kien/ctrlp.vim'
   Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/syntastic'
+  Bundle 'LaTeX-Box-Team/LaTeX-Box'
   call vundle#end()
 
   let g:ctrlp_map = '<c-p>'
@@ -74,6 +78,12 @@
 
   "Default Colorscheme
   colorscheme molokai
+  "set background=light
+  "let g:solarized_termcolors=256
+  "colorscheme solarized
+  "let g:lightline = {
+        "\ 'colorscheme': 'solarized',
+        "\ }
 
   "Highlight columns past 80
   let &colorcolumn=join(range(81,999),",")
@@ -182,8 +192,6 @@ endif
   endif
   "Ignore compiled files
   set wildignore=*.o,*~,*.pyc
-
-map \ :NERDTreeToggle <CR>
 
 "Highlight end of line whitespace.
   highlight WhitespaceEOL ctermbg=darkgreen guibg=darkgreen

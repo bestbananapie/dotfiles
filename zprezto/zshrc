@@ -12,5 +12,8 @@ fi
 
 # Customize to your needs...
 export PATH=$PATH:~/bin
+alias tmux="tmux -2"
 
-#export TERM=xterm-256color
+if [[ -s "${ZDOTDIR:-$HOME}/.zshrc.local" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zshrc.local"
+fi
