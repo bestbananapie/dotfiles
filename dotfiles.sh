@@ -22,6 +22,7 @@ elif [ "$1" = "install" ] || ["$1" = "-i"] ; then
 	ln -s -v ~/dotfiles/tmux.conf ~/.tmux.conf
 	ln -s -v ~/dotfiles/vimrc  ~/.vimrc
 	ln -s -v ~/dotfiles/gitconfig  ~/.gitconfig
+	ln -s -v ~/dotfiles/npmrc  ~/.npmrc
 
   	mkdir ~/.vim/colors
 	ln -s -v ~/dotfiles/molokai.vim  ~/.vim/colors/molokai.vim

@@ -65,6 +65,7 @@
   Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/syntastic'
   Bundle 'LaTeX-Box-Team/LaTeX-Box'
+  Bundle 'vobornik/vim-mql4'
   call vundle#end()
 
   let g:ctrlp_map = '<c-p>'
