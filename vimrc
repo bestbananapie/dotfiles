@@ -26,7 +26,7 @@
   set autoread
 
   "Language-Dependent Indenting
-  filetype plugin indent on
+  filetype plugin on
 
   " Open tag definition in a new vsplit
   set tags=./tags;/
@@ -37,6 +37,8 @@
   set nowb
   set noswapfile
 
+  "Auto close html tag with <//
+  :iabbrev <// </<C-X><C-O>
   "Toggle line wrap for tex files
   autocmd BufRead,BufNewFile   *.tex setlocal wrap linebreak colorcolumn=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,6 +68,7 @@
   Bundle 'scrooloose/syntastic'
   Bundle 'LaTeX-Box-Team/LaTeX-Box'
   Bundle 'vobornik/vim-mql4'
+  Bundle 'sukima/xmledit'
   call vundle#end()
 
   let g:ctrlp_map = '<c-p>'
@@ -78,13 +81,13 @@
   syntax on
 
   "Default Colorscheme
-  colorscheme molokai
-  "set background=light
-  "let g:solarized_termcolors=256
-  "colorscheme solarized
-  "let g:lightline = {
-        "\ 'colorscheme': 'solarized',
-        "\ }
+  "colorscheme molokai
+  set background=light
+  let g:solarized_termcolors=256
+  colorscheme solarized
+  let g:lightline = {
+        \ 'colorscheme': 'solarized',
+        \ }
 
   "Highlight columns past 80
   let &colorcolumn=join(range(81,999),",")
