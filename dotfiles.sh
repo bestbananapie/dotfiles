@@ -12,7 +12,6 @@ elif [ "$1" = "update" ] || ["$1" = "-u"] ; then
     cd ~/.vim/bundle/Vundle.vim
     git pull
   else
-
     echo "Please Install First"
   fi
 
@@ -49,7 +48,7 @@ elif [ "$1" = "remove" ] || [ "$1" = "-r"] ; then
 	rm -i ~/.zshrc
 
 	rm -ri ~/.zgen
-	rm -ri ~/.vim/bundle/Vundlen.vim
+	rm -ri ~/.vim/bundle/Vundle.vim
 
 else
 
