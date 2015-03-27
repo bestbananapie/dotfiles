@@ -29,12 +29,16 @@ elif [ "$1" = "install" ] || ["$1" = "-i"] ; then
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   git clone https://github.com/tarjoilija/zgen ${HOME}/.zgen
 
-	ln -s -v ~/dotfiles/tmux.conf ~/.tmux.conf
-	ln -s -v ~/dotfiles/vimrc     ~/.vimrc
-	ln -s -v ~/dotfiles/gitconfig ~/.gitconfig
-	ln -s -v ~/dotfiles/npmrc     ~/.npmrc
+	ln -s -v ${HOME}/dotfiles/tmux.conf ~/.tmux.conf
+	ln -s -v ${HOME}/dotfiles/vimrc     ~/.vimrc
+	ln -s -v ${HOME}/dotfiles/gitconfig ~/.gitconfig
+	ln -s -v ${HOME}/dotfiles/npmrc     ~/.npmrc
+
+  mkdir -p ~/.i3/config
+	ln -s -v ${HOME}/dotfiles/i3.config ~/.i3/config
 
 	ln -s -v ~/dotfiles/zshrc     ~/.zshrc
+
 
 	mkdir ~/.vim/colors
 	ln -s -v ~/dotfiles/molokai.vim  ~/.vim/colors/molokai.vim
