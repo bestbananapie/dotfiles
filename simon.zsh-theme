@@ -1,5 +1,6 @@
 ##This theme is heavily copied from oh-my-zsh/themes/jonathan
 
+
 # Find number of horizontal bars to add
 function theme_precmd {
     local TERMWIDTH
@@ -40,7 +41,7 @@ setprompt () {
       eval PR_LIGHT_$color='%{$fg[${(L)color}]%}'
       (( count = $count + 1 ))
     done
-
+    PR_PCOLOUR=$PR_CYAN
     PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
     ###
@@ -77,17 +78,25 @@ setprompt () {
 
     PROMPT='
 $PR_SET_CHARSET\
-$PR_CYAN$PR_ULCORNER$PR_HBAR\
+$PR_PCOLOUR$PR_ULCORNER$PR_HBAR\
 $PR_GREY($PR_GREEN%$PR_PWDLEN<...<%~%<<$PR_GREY)\
-$PR_CYAN$PR_HBAR$PR_HBAR${(e)PR_FILLBAR}$PR_HBAR\
-$PR_GREY($PR_CYAN%(!.%SROOT%s.%n)$PR_GREY@$PR_GREEN%m$PR_GREY)\
-$PR_CYAN$PR_HBAR$PR_HBAR\
-$PR_GREY($PR_CYAN%!$PR_GREY)\
-$PR_CYAN$PR_HBAR\
-$PR_CYAN$PR_LLCORNER$PR_CYAN$PR_HBAR\
+$PR_PCOLOUR$PR_HBAR$PR_HBAR${(e)PR_FILLBAR}$PR_HBAR\
+$PR_GREY($PR_PCOLOUR%(!.%SROOT%s.%n)$PR_GREY@$PR_GREEN%m$PR_GREY)\
+$PR_PCOLOUR$PR_HBAR$PR_HBAR\
+$PR_GREY($PR_PCOLOUR%!$PR_GREY)\
+$PR_PCOLOUR$PR_HBAR\
+$PR_PCOLOUR$PR_LLCORNER$PR_PCOLOUR$PR_HBAR\
 >\
-'
+%{$reset_color%}'
+
+RPROMPT='$(vi_mode_prompt_info)$PR_BLUE$(git_prompt_info)'
+
 }
+
+ZSH_THEME_GIT_PROMPT_PREFIX=" ["
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_DIRTY="]%{$fg[red]%}+%{$RESET_COLOR%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 setprompt
 
