@@ -89,13 +89,13 @@ $PR_PCOLOUR$PR_LLCORNER$PR_PCOLOUR$PR_HBAR\
 >\
 %{$reset_color%}'
 
-RPROMPT='$(vi_mode_prompt_info)$PR_BLUE$(git_prompt_info)'
+RPROMPT='$(vi_mode_prompt_info)$PR_BLUE$(git_prompt_info)%{$RESET_COLOR%}'
 
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ["
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_DIRTY="]%{$fg[red]%}+%{$RESET_COLOR%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="]%{$fg[red]%}+"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 setprompt
