@@ -16,9 +16,10 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/gitfast
     zgen oh-my-zsh plugins/meteor
+    zgen oh-my-zsh plugins/dirhistory
+    zgen oh-my-zsh plugins/per-directory-history
+    zgen oh-my-zsh plugins/vi-mode
     zgen load zsh-users/zsh-syntax-highlighting
-    #zgen load zsh-users/zsh-history-substring-search
-    #zgen load tarruda/zsh-autosuggestions
 
     # completions
     zgen load zsh-users/zsh-completions src
@@ -39,20 +40,13 @@ path=(
 
 
 alias tmux="tmux -2"
+
 #export TERM=xterm-256color
-#
+
+
 NPM_PACKAGES="${HOME}/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 PATH="$NPM_PACKAGES/bin:$PATH"
-
-#zmodload zsh/terminfo
-#bindkey "$terminfo[kcuu1]" history-substring-search-up
-#bindkey "$terminfo[kcud1]" history-substring-search-down
-
-#zle-line-init() {
-#  zle autosuggest-start
-#}
-#zle -N zle-line-init
 
 #bindkey '^F' vi-forward-word
 
