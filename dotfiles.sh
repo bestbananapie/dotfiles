@@ -34,7 +34,7 @@ elif [ "$1" = "install" ] || ["$1" = "-i"] ; then
 	ln -s -v ${HOME}/dotfiles/gitconfig ~/.gitconfig
 	ln -s -v ${HOME}/dotfiles/npmrc     ~/.npmrc
 
-  mkdir -p ~/.i3
+	mkdir -p ~/.i3
 	ln -s -v ${HOME}/dotfiles/i3.config ~/.i3/config
 
 	ln -s -v ~/dotfiles/zshrc     ~/.zshrc
