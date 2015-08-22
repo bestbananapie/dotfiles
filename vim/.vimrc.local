@@ -1,0 +1,8 @@
+    "Default Colorscheme
+    colorscheme molokai
+    "set background=light
+    "let g:solarized_termcolors=256
+    "colorscheme solarized
+    "let g:lightline = {
+    ""      \ 'colorscheme': 'solarized',
+    ""      \ }

@@ -1,0 +1,11 @@
+" ------------------------------------------------------------------------------
+" Vim Local Bundles Configuration File
+" By Simon Lee
+" ------------------------------------------------------------------------------
+
+
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
+"Plugin 'vobornik/vim-mql4'
+"Plugin 'sukima/xmledit'
+
+"Plugin 'scrooloose/nerdtree'

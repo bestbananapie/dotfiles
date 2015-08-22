@@ -1,0 +1,96 @@
+" ------------------------------------------------------------------------------
+" Vim Bundles Configuration File
+" By Simon Lee
+" ------------------------------------------------------------------------------
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+
+" ------------------------------------------------------------------------------
+" ! Vundle
+" ------------------------------------------------------------------------------
+    if &compatible
+      set nocompatible
+    end
+
+    filetype off
+
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+
+        " let Vundle manage Vundle, required
+        Plugin 'VundleVim/Vundle.vim'
+
+        " Status Line for vim
+        Plugin 'itchyny/lightline.vim'
+
+        " Fuzzy File Search
+        Plugin 'kien/ctrlp.vim'
+            " CTRL+P -> open search
+            " CTRL+T -> open in new tab
+            " CTRL+x -> open in vertical split
+            " CTRL+s -> open in horizontal split
+            
+        " Indent Guides
+        Plugin 'nathanaelkane/vim-indent-guides'
+
+        " Insert mode auto-completion for quotes, parens, brackets, etc.
+        Plugin 'Raimondi/delimitMate'
+
+        " True Sublime Text style multiple selections for Vim
+        Plugin 'terryma/vim-multiple-cursors'
+        
+        " Snippets 
+        "{
+          Plugin 'MarcWeber/vim-addon-mw-utils'
+          Plugin 'tomtom/tlib_vim'
+          Plugin 'garbas/vim-snipmate'
+          Plugin 'honza/vim-snippets'
+        "}
+
+        "Show git diff in gutter
+        if has('signs')
+            Plugin 'gitgutter/vim'
+        end
+
+        " Comment Plugin 
+        Plugin 'tomtom/tcomment_vim'
+            " gc to toggle comment
+
+        " Synatx Checking 
+        Plugin 'scrooloose/syntastic'
+
+        " Load any local Plugins
+        if filereadable(expand("~/.vimrc.bundles.local"))
+          source ~/.vimrc.bundles.local
+        endif
+
+    call vundle#end()            " required
+
+    filetype plugin indent on    " required
+
+
+" ------------------------------------------------------------------------------
+" ! Plugin Configuration
+" ------------------------------------------------------------------------------
+    " ctrlp
+        let g:ctrlp_map = '<c-p>'
+        let g:ctrlp_cmd = 'CtrlP'
+
+    " Syntastic
+        set statusline+=%#warningmsg#
+        set statusline+=%{SyntasticStatuslineFlag()}
+        set statusline+=%*
+
+        let g:syntastic_always_populate_loc_list = 1
+        let g:syntastic_auto_loc_list = 1
+        let g:syntastic_check_on_open = 1
+        let g:syntastic_check_on_wq = 0
+
+    " gitgutter
+        let g:gitgutter_max_signs = 500
