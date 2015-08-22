@@ -2,7 +2,7 @@
 
 source "${HOME}/.zgen/zgen.zsh"
 
-source "${HOME}/dotfiles/simon.zsh-theme"
+source "${HOME}/.zsh/simon.zsh-theme"
 
 # check if there's no init script
 if ! zgen saved; then
@@ -19,7 +19,9 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/dirhistory
     zgen oh-my-zsh plugins/per-directory-history
     zgen oh-my-zsh plugins/vi-mode
+    zgen oh-my-zsh plugins/colored-man
     zgen load zsh-users/zsh-syntax-highlighting
+    zgen load chrissicool/zsh-256color
 
     # completions
     zgen load zsh-users/zsh-completions src
