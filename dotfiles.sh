@@ -34,6 +34,7 @@ COPY=( \
   .vimrc.local          ${DOTFILES_ROOT}/vim          ${HOME}                   \
   .vimrc.bundles.local  ${DOTFILES_ROOT}/vim          ${HOME}                   \
   molokai.vim           ${DOTFILES_ROOT}/vim/colors   ${HOME}/.vim/colors       \
+  solarized.vim           ${DOTFILES_ROOT}/vim/colors   ${HOME}/.vim/colors       \
   #Zshrc Files
   .zshrc.local          ${DOTFILES_ROOT}/zsh          ${HOME}                   \
   simon.zsh-theme       ${DOTFILES_ROOT}/zsh          ${HOME}/.zsh              \
