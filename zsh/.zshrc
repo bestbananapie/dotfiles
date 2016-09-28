@@ -10,21 +10,27 @@ if ! zgen saved; then
 
     zgen oh-my-zsh
 
-    # plugins
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/gitfast
-    zgen oh-my-zsh plugins/meteor
-    zgen oh-my-zsh plugins/dirhistory
-    zgen oh-my-zsh plugins/per-directory-history
-    zgen oh-my-zsh plugins/vi-mode
-    zgen oh-my-zsh plugins/colored-man
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load chrissicool/zsh-256color
+    #Plugings
+        #Improve vi mode
+        zgen oh-my-zsh plugins/vi-mode
 
-    # completions
-    zgen load zsh-users/zsh-completions src
+        #Colored Man Pages
+        zgen oh-my-zsh plugins/colored-man-pages
+
+        # Syntax highlighting
+        zgen load zsh-users/zsh-syntax-highlighting
+
+        # Enhance terminal with 256 colors
+        zgen load chrissicool/zsh-256color
+        
+        # Per directory history with ctrl G
+        # Toggle between local and global history with <C-g>
+        zgen load jimhester/per-directory-history
+
+    # Auto completions plugins
+        zgen oh-my-zsh plugins/gitfast #git
+        zgen oh-my-zsh plugins/meteor #meteor
+        zgen load zsh-users/zsh-completions src
 
     # save all to init script
     zgen save
