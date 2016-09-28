@@ -34,12 +34,8 @@
 " ------------------------------------------------------------------------------
 " ! Important
 " ------------------------------------------------------------------------------
-    set t_Co=256
-
     set pastetoggle=<F2>
 
-    "open tags in split
-    map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 " ------------------------------------------------------------------------------
 " ! Vundle
 " ------------------------------------------------------------------------------
@@ -59,16 +55,14 @@
     "Show match for partly typed search command
     set incsearch
 
-    "!open tags in split
-    map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-
 " ------------------------------------------------------------------------------
 " ! Tags
 " ------------------------------------------------------------------------------
     " List of file names to search for tags
     set tags=./tags;/
 
+    "open tags in split
+    map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " ------------------------------------------------------------------------------
 " ! Displaying Text
@@ -78,7 +72,6 @@
 
     "Show line number for each line
     set number
-
 
 " ------------------------------------------------------------------------------
 " ! Syntax, Highlighting and Spelling
@@ -91,16 +84,13 @@
 
     "Highlight Spelling Mistakes
     if has("spell")
-        " turn spelling on by default
-        set spell
-
         " toggle spelling with F4 key
         map <F4> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 
         " they were using white on white
         highlight PmenuSel ctermfg=black ctermbg=lightgray
 
-        " limit it to just the top 10 items
+        " limit suggestions to just the top 10 items
         set sps=best,10
     endif
 
@@ -108,26 +98,12 @@
     let &colorcolumn=join(range(81,999),",")
     hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
-    "!Highlight end of line whitespace.
-    highlight WhitespaceEOL ctermbg=darkgreen guibg=darkgreen
-    match WhitespaceEOL /\s\+$/
-    func! DeleteTrailingSpace()
-        exe "normal mz"
-        %s/\s\+$//ge
-        exe "normal `z"
-    endfunc
-
-
 " ------------------------------------------------------------------------------
 " ! Multiple Windows
 " ------------------------------------------------------------------------------
     "Location for new window splits
     set splitbelow
     "set splitright
-
-    "Show a status line even if there is only one window
-    set laststatus=2
-
 
 " ------------------------------------------------------------------------------
 " ! Multiple Tab Pages
@@ -138,7 +114,7 @@
 " ------------------------------------------------------------------------------
     set ttyfast
 
-
+    set t_Co=256
 " ------------------------------------------------------------------------------
 " ! Using the Mouse
 " ------------------------------------------------------------------------------
@@ -173,7 +149,6 @@
     " don't display the current mode (Insert, Visual, Replace) in the status line.
     set noshowmode
 
-
 " ------------------------------------------------------------------------------
 " ! Selecting Text
 " ------------------------------------------------------------------------------
@@ -194,7 +169,6 @@
     "Show matching brackets when text indicator is over them
     set showmatch
 
-
 " ------------------------------------------------------------------------------
 " ! Tabs and Indenting
 " ------------------------------------------------------------------------------
@@ -214,7 +188,6 @@
     "!Reset visual block after indent/outdent
     vnoremap < <gv  " better indentation
     vnoremap > >gv  " better indentation
-
 
 " ------------------------------------------------------------------------------
 " ! Folding
@@ -257,6 +230,7 @@
     noremap k gk
 
     let mapleader=","
+
 " ------------------------------------------------------------------------------
 " ! Reading and Writing Files
 " ------------------------------------------------------------------------------
@@ -297,7 +271,6 @@
     " Enable auto complete menu
     set wildmenu
 
-
 " ------------------------------------------------------------------------------
 " ! Executing External Commands
 " ------------------------------------------------------------------------------
@@ -312,7 +285,6 @@
   "Toggle line wrap for tex files
   autocmd BufRead,BufNewFile   *.tex setlocal wrap linebreak colorcolumn=
 
-
 " ------------------------------------------------------------------------------
 " ! Multi-byte Characters
 " ------------------------------------------------------------------------------
@@ -323,7 +295,6 @@
 " ------------------------------------------------------------------------------
     " Allow for cursor beyond last character
     set virtualedit=onemore
-
 
 " ----------------------------------------------------------------------------
 " Allow overriding these settings

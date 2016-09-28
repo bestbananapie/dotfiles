@@ -11,7 +11,7 @@
 " see :h vundle for more details or wiki for FAQ
 
 " ------------------------------------------------------------------------------
-" ! Vundle
+" ! Vundle Start
 " ------------------------------------------------------------------------------
     if &compatible
       set nocompatible
@@ -23,74 +23,95 @@
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
 
-        " let Vundle manage Vundle, required
-        Plugin 'VundleVim/Vundle.vim'
+    " let Vundle manage Vundle, required
+    Plugin 'VundleVim/Vundle.vim'
 
-        " Status Line for vim
-        Plugin 'itchyny/lightline.vim'
+" ------------------------------------------------------------------------------
+" ! NERD Tree
+" ------------------------------------------------------------------------------
+" https://github.com/pangloss/vim-javascript
 
-        " Fuzzy File Search
-        Plugin 'kien/ctrlp.vim'
-            " CTRL+P -> open search
-            " CTRL+T -> open in new tab
-            " CTRL+x -> open in vertical split
-            " CTRL+s -> open in horizontal split
-            
-        " Indent Guides
-        Plugin 'nathanaelkane/vim-indent-guides'
+    " JavaScript bundle for vim, this bundle provides syntax highlighting and
+    " improved indentation.
+    Plugin 'pangloss/vim-javascript'
 
-        " Insert mode auto-completion for quotes, parens, brackets, etc.
-        Plugin 'Raimondi/delimitMate'
+" ------------------------------------------------------------------------------
+" ! NERD Tree
+" ------------------------------------------------------------------------------
+" https://github.com/scrooloose/nerdtree
 
-        " True Sublime Text style multiple selections for Vim
-        Plugin 'terryma/vim-multiple-cursors'
+    " Filesystem explorer
+    Plugin 'scrooloose/nerdtree'
+    
+    " Usage
+    " <C-m> Open Nerdtree
+
+    " Configuration
+    map <C-m> :NERDTreeToggle<CR>
+
+" ------------------------------------------------------------------------------
+" ! Status Line
+" ------------------------------------------------------------------------------
+" https://github.com/itchyny/lightline.vim
+
+    " A light and configurable statusline/tabline for Vim
+    Plugin 'itchyny/lightline.vim'
+
+    " Usage
+
+    " Configuration
+        " Show a status line even if there is only one window
+        set laststatus=2
+
+" ------------------------------------------------------------------------------
+" ! Ctrl P
+" ------------------------------------------------------------------------------
+" https://github.com/ctrlpvim/ctrlp.vim
+
+    " Full path fuzzy file, buffer, mru, tag... finder for Vim.
+    Plugin 'ctrlpvim/ctrlp.vim'
+
+    " Usage
+        " CTRL+P   -> open search
+        " CTRL+T   -> open in new tab
+        " CTRL+x   -> open in vertical split
+        " CTRL+s   -> open in horizontal split
+        " CTRL+j/k -> navigate the results list
+        " <F5>     -> refersh
         
-        " Snippets 
-        "{
-          Plugin 'MarcWeber/vim-addon-mw-utils'
-          Plugin 'tomtom/tlib_vim'
-          Plugin 'garbas/vim-snipmate'
-          Plugin 'honza/vim-snippets'
-        "}
+    " Configuration
+        let g:ctrlp_map = '<c-p>'
+        let g:ctrlp_cmd = 'CtrlP'
+    
+" ------------------------------------------------------------------------------
+" ! Multiple Cursors
+" ------------------------------------------------------------------------------
+" https://github.com/terryma/vim-multiple-cursors
 
-        "Show git diff in gutter
-        if has('signs')
-            Plugin 'gitgutter/vim'
-        end
+    " True Sublime Text style multiple selections for Vim
+    Plugin 'terryma/vim-multiple-cursors'
 
-        " Comment Plugin 
-        Plugin 'tomtom/tcomment_vim'
-            " gc to toggle comment
+    " Usage
+        " <C-n> Go to next selection
+        " <C-p> Go back one selection
+        " <C-x> Skip selection 
 
-        " Synatx Checking 
-        Plugin 'scrooloose/syntastic'
+" ------------------------------------------------------------------------------
+" ! Git Gutter
+" ------------------------------------------------------------------------------
+" https://github.com/airblade/vim-gitgutter
 
-        " Load any local Plugins
-        if filereadable(expand("~/.vimrc.bundles.local"))
-          source ~/.vimrc.bundles.local
-        endif
+    "Show git diff in gutter
+    Plugin 'airblade/vim-gitgutter'
+
+" ------------------------------------------------------------------------------
+" ! Vundle End
+" ------------------------------------------------------------------------------
+    " Load any local Plugins
+    if filereadable(expand("~/.vimrc.bundles.local"))
+      source ~/.vimrc.bundles.local
+    endif
 
     call vundle#end()            " required
 
     filetype plugin indent on    " required
-
-
-" ------------------------------------------------------------------------------
-" ! Plugin Configuration
-" ------------------------------------------------------------------------------
-    " ctrlp
-        let g:ctrlp_map = '<c-p>'
-        let g:ctrlp_cmd = 'CtrlP'
-
-    " Syntastic
-        set statusline+=%#warningmsg#
-        set statusline+=%{SyntasticStatuslineFlag()}
-        set statusline+=%*
-
-        let g:syntastic_always_populate_loc_list = 1
-        let g:syntastic_auto_loc_list = 1
-        let g:syntastic_check_on_open = 1
-        let g:syntastic_check_on_wq = 0
-
-    " gitgutter
-        let g:gitgutter_max_signs = 500
