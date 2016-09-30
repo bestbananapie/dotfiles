@@ -182,8 +182,8 @@
     set smarttab
 
     "Set tab width to 4
-    set shiftwidth=4
-    set tabstop=4
+    set shiftwidth=2
+    set tabstop=2
 
     "!Reset visual block after indent/outdent
     vnoremap < <gv  " better indentation

@@ -25,6 +25,18 @@
 
     " let Vundle manage Vundle, required
     Plugin 'VundleVim/Vundle.vim'
+" ------------------------------------------------------------------------------
+" ! Goyo Distraction-free writing
+" ------------------------------------------------------------------------------
+" https://github.com/junegunn/goyo.vim
+
+    " Distraction-free writing in vim
+    Plugin 'junegunn/goyo.vim'
+
+    " Usage
+    " :Goyo => Toggle Goyo
+    " :Goyo [dimension] => Turn on or resize Goyo
+    " :Goyo! => turn off Goyo
 
 " ------------------------------------------------------------------------------
 " ! NERD Tree
