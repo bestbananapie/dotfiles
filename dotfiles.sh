@@ -10,6 +10,7 @@ GIT=( \
 # url                                         dest
   https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim    \
   https://github.com/tarjoilija/zgen          ${HOME}/.zgen                     \
+  https://github.com/tmux-plugins/tpm         ${HOME}/.tmux/plugins/tpm         \
 )
 
 # Files to link
@@ -34,7 +35,7 @@ COPY=( \
   .vimrc.local          ${DOTFILES_ROOT}/vim          ${HOME}                   \
   .vimrc.bundles.local  ${DOTFILES_ROOT}/vim          ${HOME}                   \
   molokai.vim           ${DOTFILES_ROOT}/vim/colors   ${HOME}/.vim/colors       \
-  solarized.vim           ${DOTFILES_ROOT}/vim/colors   ${HOME}/.vim/colors       \
+  solarized.vim           ${DOTFILES_ROOT}/vim/colors   ${HOME}/.vim/colors     \
   #Zshrc Files
   .zshrc.local          ${DOTFILES_ROOT}/zsh          ${HOME}                   \
   simon.zsh-theme       ${DOTFILES_ROOT}/zsh          ${HOME}/.zsh              \

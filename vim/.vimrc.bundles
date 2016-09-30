@@ -39,6 +39,24 @@
     " :Goyo! => turn off Goyo
 
 " ------------------------------------------------------------------------------
+" ! Vim Tmux Navigator
+" ------------------------------------------------------------------------------
+" https://github.com/christoomey/vim-tmux-navigator
+
+	" Plugin will allow you to navigate seamlessly between vim and tmux splits 
+    " using a consistent set of hotkeys.
+    Plugin 'christoomey/vim-tmux-navigator'
+
+	" Usage
+	" <ctrl-h> => Left
+	" <ctrl-j> => Down
+	" <ctrl-k> => Up
+	" <ctrl-l> => Right
+	" <ctrl-\> => Previous split
+	" Note - you don't need to use your tmux prefix key sequence before using the mappings.
+
+
+" ------------------------------------------------------------------------------
 " ! NERD Tree
 " ------------------------------------------------------------------------------
 " https://github.com/pangloss/vim-javascript
